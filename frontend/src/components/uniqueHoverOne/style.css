@@ -1,0 +1,43 @@
+.unique_hover_cont {
+  background-color: white;
+  padding: 18px;
+  border-radius: 100pc;
+  cursor: pointer;
+  width: max-content;
+}
+
+.icon_link {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  border: 2px solid white;
+  transition: border-color 90ms ease-out;
+}
+
+.icon_link:hover {
+    border-color: #1f1f1f;
+    transition: border-color 150ms ease-in-out;
+}
+/* starting animation */
+.slide_right_inner_cont {
+    font-weight: 850;
+    letter-spacing: 1.2px;
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.slide_right_inner_cont{
+    width: 30px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 150ms ease-out;
+}
+.unique_hover_cont.slide_right:hover>.slide_right_inner_cont{
+    width: 100%;
+    opacity: 1;
+    transition: all 150ms ease-in;
+}

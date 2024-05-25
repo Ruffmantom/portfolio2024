@@ -1,0 +1,9 @@
+.prt_theme_icon{
+    border: none;
+    opacity: 0;
+    transition:opacity 90ms ease-out;
+}
+.prt_theme_hover_button:hover>.prt_theme_icon{
+    opacity: 1;
+    transition: opacity 150ms ease-in;
+}

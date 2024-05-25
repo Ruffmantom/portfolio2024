@@ -1,0 +1,35 @@
+/* 
+  .under_contruction_view>.under_construction_text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    animation: scrolling 10s linear infinite;
+  }
+  */
+  
+  .under_construction{
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .under_construction_text{
+    font-size: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    color: white;
+    font-weight: 900;
+    animation: scrolling 30s linear infinite;
+  }
+
+  @keyframes scrolling {
+    from {
+      transform: translateX(40%);
+    }
+    to {
+      transform: translateX(-40%);
+    }
+  } 

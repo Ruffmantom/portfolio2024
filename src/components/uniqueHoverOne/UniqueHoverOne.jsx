@@ -17,16 +17,36 @@ const UniqueHoverOne = ({ link, action, content }) => {
       <div className="unique_hover_cont slide_right">
         <div className="slide_right_inner_cont">
           <p>{content}</p>
-          <a className="icon_link" href="#">
+          <a
+            className="icon_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/praizerskater/"
+          >
             <InstagramIcon />
           </a>
-          <a className="icon_link" href="#">
+          <a
+            className="icon_link"
+            target="_blank"
+            rel="noreferrer"
+            href="www.linkedin.com/in/tom-ruff-098330a3"
+          >
             <LinkedinIcon />
           </a>
-          <a className="icon_link" href="#">
+          <a
+            className="icon_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://discord.gg/Znhfd7BK"
+          >
             <DiscordIcon />
           </a>
-          <a className="icon_link" href="#">
+          <a
+            className="icon_link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://buymeacoffee.com/tomruffcodes"
+          >
             <CoffeeIcon />
           </a>
         </div>

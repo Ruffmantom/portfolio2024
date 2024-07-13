@@ -27,7 +27,7 @@ const Home = () => {
           <h1 className="homepage_accent_number">[1]</h1>
         </div>
       </div>
-      {/* homescreen under construction overlay */}
+      {/* home screen under construction overlay */}
       <UnderConstructionBanner/>
     </div>
   );

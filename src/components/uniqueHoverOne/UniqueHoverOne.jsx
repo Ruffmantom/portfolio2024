@@ -29,7 +29,7 @@ const UniqueHoverOne = ({ link, action, content }) => {
             className="icon_link"
             target="_blank"
             rel="noreferrer"
-            href="www.linkedin.com/in/tom-ruff-098330a3"
+            href="https://www.linkedin.com/in/tom-ruff-098330a3"
           >
             <LinkedinIcon />
           </a>

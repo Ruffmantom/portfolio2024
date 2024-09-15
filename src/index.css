@@ -28,9 +28,18 @@
 
 /* default is dark mode */
 :root {
-  --black: #1f1f1f;
-  --white: #FFFFFF;
-  --accent: hsl(0, 0%, 20%);
+  --root-bkg: #1f1f1f;
+  --button-bkg: #FFF;
+  --text-color: #FFF;
+  --link-color: #00FF00;
+}
+
+:root:has(#rwd_theme_light:checked) {
+  --root-bkg: #FFFFFF;
+  --button-bkg: #1f1f1f;
+  --text-color: #1f1f1f;
+  --link-color: #00d300;
+
 }
 
 
@@ -41,7 +50,7 @@
 }
 
 body {
-  background-color: #1f1f1f;
+  background-color: var(--root-bkg);
 }
 
 .over_screen_view_cont {
@@ -89,37 +98,40 @@ body {
 
 .homepage_accent_number {
   font-size: 70px;
-  color: hsl(0, 0%, 20%);
+  color: var(--text-color);
   letter-spacing: 10px;
   cursor: default;
 }
 
 .homepage_title_name {
-  color: white;
+  color: var(--text-color);
   text-transform: uppercase;
   letter-spacing: 2.5px;
   cursor: default;
 }
 
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px) {
   .top_left_corner_cont {
-    svg{
+    svg {
       max-width: 150px;
     }
   }
 }
-@media only screen and (max-width: 425px){
+
+@media only screen and (max-width: 425px) {
   .top_left_corner_cont {
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   left: 0;
-   svg{
-    max-width: 32%;
-   }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    left: 0;
+
+    svg {
+      max-width: 32%;
+    }
   }
-  .top_right_corner_cont{
-   display: none;
+
+  .top_right_corner_cont {
+    display: none;
   }
 }

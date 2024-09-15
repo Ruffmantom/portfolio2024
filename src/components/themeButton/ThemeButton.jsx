@@ -1,11 +1,11 @@
 import React from "react";
 import { ReactComponent as SunIcon } from "../../assets/images/icons/f-sun.svg";
 import { ReactComponent as MoonIcon } from "../../assets/images/icons/f-moon.svg";
-import useStore from "../../app/store";
+import useThemeStore from "../../app/themeStore";
 import "./style.css";
 
 const ThemeButton = () => {
-  const { theme, setTheme } = useStore();
+  const { theme, setTheme } = useThemeStore();
 
   const handleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -18,7 +18,7 @@ const ThemeButton = () => {
         className="radio"
         type="radio"
         name="theme"
-        id="light"
+        id="rwd_theme_light"
         checked={theme === "light"}
         onChange={() => setTheme("light")}
         hidden
@@ -28,7 +28,7 @@ const ThemeButton = () => {
         className="radio"
         type="radio"
         name="theme"
-        id="dark"
+        id="rwd_theme_dark"
         checked={theme === "dark"}
         onChange={() => setTheme("dark")}
         hidden

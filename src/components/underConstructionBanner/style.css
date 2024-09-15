@@ -1,7 +1,3 @@
-:root {
-  --bg-clr: #1f1f1f;
-  --color: #fff;
-}
 
 .carousel-wrapper {
   --width: 90%;
@@ -63,7 +59,7 @@
 
 .item {
   font-size: 300px;
-  color: var(--color);
+  color: var(--text-color);
   min-width: max-content;
   font-weight: 800;
 }

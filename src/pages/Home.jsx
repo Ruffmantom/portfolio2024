@@ -3,8 +3,12 @@ import UniqueHoverOne from "../components/uniqueHoverOne/UniqueHoverOne";
 import ThemeButton from "../components/themeButton/ThemeButton";
 import UnderConstructionBanner from "../components/underConstructionBanner/UnderConstructionBanner"
 import { ReactComponent as LogoIcon } from "../assets/images/icons/rwd-logo.svg";
+import useThemeStore from "../app/themeStore";
+
 
 const Home = () => {
+  const { theme } = useThemeStore()
+
   return (
     <div className="main_layout">
       {/* homescreen overlay */}
@@ -28,7 +32,7 @@ const Home = () => {
         </div>
       </div>
       {/* home screen under construction overlay */}
-      <UnderConstructionBanner/>
+      <UnderConstructionBanner />
     </div>
   );
 };

@@ -1,79 +1,42 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setTheme } from '../../features/theme/themeSlice';
-import themeService from '../../features/theme/themeService';
-
+import React from "react";
 import { ReactComponent as SunIcon } from "../../assets/images/icons/f-sun.svg";
 import { ReactComponent as MoonIcon } from "../../assets/images/icons/f-moon.svg";
-import './style.css'
+import useStore from "../../app/store";
+import "./style.css";
 
 const ThemeButton = () => {
-  const dispatch = useDispatch();
-  const { theme } = useSelector((state) => state.theme);
-  const isChecked = theme === "light"
-  const handleTheme = async (selectedTheme) => {
-    try {
-      await themeService.saveThemeToLocalStorage(selectedTheme);
-      dispatch(setTheme(selectedTheme));
-    } catch (error) {
-      console.error('Error:', error);
-    }
+  const { theme, setTheme } = useStore();
+
+  const handleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
   };
-  // get theme from local storage and set state
-  useEffect(() => {
-    const fetchTheme = async () => {
-      try {
-        const storedTheme = await themeService.getTheme();
-        if (storedTheme) {
-          dispatch(setTheme(storedTheme));
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    fetchTheme();
-  }, [dispatch]);
-
-  useEffect(() => {
-    const handleStorageChange = (event) => {
-      if (event.key === 'id_doc_theme') {
-        const storedTheme = event.newValue;
-        if (storedTheme) {
-          dispatch(setTheme(storedTheme));
-        }
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, [dispatch]);
 
   return (
     <>
       <input
         className="radio"
         type="radio"
-        name="light"
+        name="theme"
         id="light"
-        checked={isChecked}
+        checked={theme === "light"}
+        onChange={() => setTheme("light")}
         hidden
       />
 
       <input
         className="radio"
         type="radio"
-        name="dark"
+        name="theme"
         id="dark"
-        checked={!isChecked}
+        checked={theme === "dark"}
+        onChange={() => setTheme("dark")}
         hidden
       />
 
       <div className="unique_hover_cont prt_theme_hover_button" onClick={handleTheme}>
         <div className="icon_link prt_theme_icon">
-          <SunIcon />
+          {theme === "light" ? <SunIcon /> : <MoonIcon />}
         </div>
       </div>
     </>

@@ -19,7 +19,7 @@ const Home = () => {
 
         <div className="bottom_left_corner_cont">
           <ThemeButton />
-          <UniqueHoverOne content={"Contact."} link={"#"} />
+          <UniqueHoverOne content={"Contact."} link={"mailto:tomruffcodes@gmail.com&subject=Let's Get In Touch"} />
           <UniqueHoverOne content={`Social.`} />
         </div>
 

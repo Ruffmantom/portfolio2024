@@ -61,6 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  z-index: 9;
 }
 
 .top_left_corner_cont {
@@ -68,6 +69,7 @@ body {
   position: absolute;
   left: 50px;
   top: 50px;
+
 }
 
 .top_right_corner_cont {
@@ -97,4 +99,27 @@ body {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   cursor: default;
+}
+
+
+@media only screen and (max-width: 800px){
+  .top_left_corner_cont {
+    svg{
+      max-width: 150px;
+    }
+  }
+}
+@media only screen and (max-width: 425px){
+  .top_left_corner_cont {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   left: 0;
+   svg{
+    max-width: 32%;
+   }
+  }
+  .top_right_corner_cont{
+   display: none;
+  }
 }

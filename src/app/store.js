@@ -1,8 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import themeReducer from '../features/theme/themeSlice';
+// store.js
+import create from 'zustand';
 
-export const store = configureStore({
-  reducer: {
-    theme: themeReducer,
+const useStore = create((set) => ({
+  theme: localStorage.getItem('theme') || 'dark', // Start with dark theme and load from local storage if available
+  setTheme: (newTheme) => {
+    set({ theme: newTheme });
+    localStorage.setItem('theme', newTheme); // Save theme to local storage
   },
-});
+}));
+
+export default useStore;
